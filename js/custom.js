@@ -11,7 +11,7 @@ function contentFullpage() {
     const slideWrap = document.querySelector('.portfolio');
 
     const f = new fullpage('#content', {
-        anchors: ['intro', 'portfolio', 'profile'],
+        anchors: ['intro', 'portfolio', 'traning', 'profile'],
         scrollOverflow: false,
 
         //fullpage slide의 가로스크롤 구현 option
@@ -24,13 +24,7 @@ function contentFullpage() {
             mainVisualTimeline();
         },
 
-        afterLoad: (origin, destination, direction) => {
-            console.log(destination.index, direction);
-            mouseCursorReset();
-            destination.index === 0 && mouseCursor();
-            destination.index === 2 && mouseCursor();
-            destination.index === 2 && mouseCursor();
-        },
+
 
         onLeave: (origin, destination, direction, trigger) => {
             destination.index === 0 && mainVisualTimeline();
