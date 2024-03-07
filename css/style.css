@@ -1,15 +1,14 @@
 :root {
-    --primary-color: #FFC300;
-    --background-color: #F9F9F9;
+    --primary-color: #ffc300;
+    --background-color: #f9f9f9;
     --darkgray-color: #444444;
-    --lightgray-color: #DDDDDD;
-    --white-color: #FFFFFF;
+    --lightgray-color: #dddddd;
+    --white-color: #ffffff;
 }
 
 .fp-watermark {
     display: none;
 }
-
 
 .cursor {
     transform: translate(-50%, -50%);
@@ -30,7 +29,6 @@
     width: 5rem;
 }
 
-
 @keyframes ctxt {
     0% {
         transform: rotate(0);
@@ -40,7 +38,6 @@
         transform: rotate(360deg);
     }
 }
-
 
 html {
     font-size: 62.5%;
@@ -61,7 +58,6 @@ body {
 .fp-overflow::-webkit-scrollbar {
     display: none !important;
 }
-
 
 .title_wrap {
     position: fixed;
@@ -96,6 +92,28 @@ body {
     height: 100%;
 }
 
+.mainVisal {
+    position: relative;
+}
+
+.mainVisal .bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+
+    transform: translate(-50%, -50%);
+
+    fill: #fff;
+    stroke: rgba(0, 0, 0, 0.1);
+
+    .cls-1 {
+        stroke-linecap: square;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+
 .mainVisal .path {
     position: absolute;
     bottom: -5rem;
@@ -108,8 +126,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-
-
 }
 
 .mainVisal .path path {
@@ -148,11 +164,32 @@ body {
 }
 
 .mainVisal h2 span strong:nth-child(1) {
-    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    clip-path: polygon(
+        20% 0%,
+        0% 20%,
+        30% 50%,
+        0% 80%,
+        20% 100%,
+        50% 70%,
+        80% 100%,
+        100% 80%,
+        70% 50%,
+        100% 20%,
+        80% 0%,
+        50% 30%
+    );
 }
 
 .mainVisal h2 span strong:nth-child(2) {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        75% 75%,
+        75% 100%,
+        50% 75%,
+        0% 75%
+    );
 }
 
 .mainVisal h2 span strong:nth-child(3) {
@@ -164,7 +201,15 @@ body {
 }
 
 .mainVisal h2 span strong:nth-child(5) {
-    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    clip-path: polygon(
+        40% 0%,
+        40% 20%,
+        100% 20%,
+        100% 80%,
+        40% 80%,
+        40% 100%,
+        0% 50%
+    );
 }
 
 @keyframes nemo {
@@ -191,8 +236,6 @@ body {
     line-height: 1.8rem;
 }
 
-
-
 .mainVisal .content {
     display: flex;
     justify-content: space-between;
@@ -207,7 +250,6 @@ body {
 .mainVisal .con svg {
     max-width: 100%;
 }
-
 
 .mainVisal .t {
     position: absolute;
@@ -243,7 +285,6 @@ body {
     }
 }
 
-
 .portfolio .title {
     position: relative;
 }
@@ -259,15 +300,6 @@ body {
     color: rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
     animation: ctxt 25s linear infinite;
-}
-
-
-
-.portfolio .tit h3 {
-    font-size: 10rem;
-    font-weight: 900;
-    margin: 0 0 3.2rem 0;
-    text-transform: uppercase;
 }
 
 @keyframes bg {
@@ -290,24 +322,61 @@ body {
     }
 }
 
-
-
-
 .portfolio .con .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12rem;
     height: 50%;
+}
 
+.portfolio .con .tit {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 1.6rem 0;
 }
 
 .portfolio .con h3 {
-    margin: 0 0 1.6rem 0;
+    position: relative;
+    display: inline-block;
     font-size: 8rem;
     font-weight: 900;
     text-transform: uppercase;
     text-indent: -4px;
+
+    z-index: 999;
+}
+
+.portfolio .con .tit .brush {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+
+    opacity: 0.5;
+}
+
+.portfolio .con .tit .brush_inner {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    background: #fff;
+}
+
+.portfolio .con01 .tit .brush {
+    background: url(../images/portfolioBG_01.png) no-repeat center center/cover;
+}
+.portfolio .con02 .tit .brush {
+    background: url(../images/portfolioBG_02.png) no-repeat center center/cover;
+}
+.portfolio .con03 .tit .brush {
+    background: url(../images/portfolioBG_03.png) no-repeat center center/cover;
+}
+.portfolio .con04 .tit .brush {
+    background: url(../images/portfolioBG_04.png) no-repeat center center/cover;
+}
+.portfolio .con05 .tit .brush {
+    background: url(../images/portfolioBG_05.png) no-repeat center center/cover;
 }
 
 .portfolio .con p {
@@ -316,7 +385,7 @@ body {
 
 .portfolio .con .desc_inner {
     width: 100%;
-    background: #FFFFFF;
+    background: #ffffff;
 }
 
 .portfolio .con .table {
@@ -333,7 +402,7 @@ body {
     border-radius: 8px;
     padding: 12px 32px;
     background: var(--darkgray-color);
-    color: var(--white-color)
+    color: var(--white-color);
 }
 
 .portfolio .con .desc_table {
@@ -369,14 +438,12 @@ body {
     overflow: hidden;
 }
 
-
 .portfolio .slide .p {
     position: absolute;
     left: -10000px;
     width: 10rem;
     border: 1px solid var(--primary-color);
 }
-
 
 @keyframes fly2 {
     0% {
@@ -398,18 +465,16 @@ body {
     height: 62.5rem;
 }
 
-.portfolio .mokup>* {
+.portfolio .mokup > * {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-
 }
 
 .portfolio .mokup .line {
-
     z-index: 999;
 }
 
@@ -417,10 +482,9 @@ body {
     border-radius: 4.5rem;
     border: 1rem solid transparent;
     box-shadow: 2rem 2rem 16px rgba(0, 0, 0, 0.1);
-
 }
 
-.portfolio .mokup .line+.pof img {
+.portfolio .mokup .line + .pof img {
     transition: transform 0.5s;
     height: 100%;
 }
@@ -429,15 +493,14 @@ body {
     width: 650px;
 }
 
-
-.traning {}
+.traning {
+}
 
 .traning h2 {
     font-size: 8rem;
     font-weight: 900;
     margin: 0 0 40px 0;
     text-transform: uppercase;
-
 }
 
 .traning .traning_wrap {
@@ -465,18 +528,14 @@ body {
     margin: 0 0 8px;
 }
 
-
-
-
 .traning .traning_wrap .profile {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.traning .traning_wrap .profile .inner {}
-
-
+.traning .traning_wrap .profile .inner {
+}
 
 .profile .tit h3 {
     font-size: 10rem;
@@ -484,10 +543,6 @@ body {
     margin: 0 0 3.2rem 0;
     text-transform: uppercase;
 }
-
-
-
-
 
 .totop {
     position: fixed;
