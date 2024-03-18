@@ -22,6 +22,8 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js"></script>
         <script src="./js/custom.js?ver=1.0" defer></script>
     </head>
@@ -30,20 +32,47 @@
         <div class="wrapper">
             <header class="header">
                 <div class="title_wrap">
-                    <h1>2024 lee's portfolio</h1>
+                    <h1 class="blind">2024 Kmj Fortfolio</h1>
                     <div id="type" aria-hidden="true"></div>
                 </div>
             </header>
             <nav class="gnb">
-                <h2>design hassam</h2>
-
-                <ul class="lnk">
-                    <li><a href="#portfolio">portfolio lnk 01</a></li>
-                    <li><a href="#portfolio/1">portfolio lnk 02</a></li>
-                    <li><a href="#portfolio/2">portfolio lnk 03</a></li>
-                    <li><a href="#portfolio/3">portfolio lnk 04</a></li>
-                    <li><a href="#portfolio/4">portfolio lnk 05</a></li>
-                </ul>
+                <h2>
+                    <strong>MAKE</strong>
+                    <strong>BOX</strong>
+                    <strong>DESIGN</strong>
+                    <strong>SELECT</strong>
+                </h2>
+                <div class="gnb_box inner">
+                    <div class="txt_box">
+                        <div class="left_txt">
+                            <strong>MAKE</strong>
+                            <strong>BOX</strong>
+                            <strong>DESIGN</strong>
+                            <strong>SELECT</strong>
+                        </div>
+                        <ul class="lnk">
+                            <li>
+                                <a href="#portfolio/1"
+                                    >Fortfolio
+                                    <p>포트폴리오</p></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#traning"
+                                    >TRANING
+                                    <p>TRANING</p></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#profile"
+                                    >PROFILE
+                                    <p>PROFILE</p></a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
             <div class="utils_wrap">
                 <button class="hamburger hamburger--collapse btn" type="button">
@@ -52,13 +81,40 @@
                     </span>
                 </button>
             </div>
+            <div class="tel_wrap">
+                <a href=""
+                    ><span class="material-symbols-outlined"> call </span>
+                    :
+                    <p>010-1234-1234</p></a
+                >
+                <a href=""
+                    ><span class="material-symbols-outlined"> mail </span>
+                    :
+                    <p>asdasd@naver.com</p></a
+                >
+            </div>
             <main id="content">
                 <section class="section mainVisal">
+                    <div id="particles-js">
+                        <div class="count-particles">
+                            <span class="js-count-particles">--</span>
+                            particles
+                        </div>
+                    </div>
+                    <!-- stats - count particles -->
+                    <div class="painting">
+                        <video
+                            src="./images/painting.mp4"
+                            autoplay=""
+                            muted=""
+                            playsinline=""
+                        ></video>
+                    </div>
                     <div class="bg">
                         <?xml version="1.0" encoding="UTF-8"?>
                         <svg
-                            id="_레이어_1"
-                            data-name="레이어 1"
+                            id="layer_01"
+                            data-name="layer_01"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 547.91 453.41"
                         >
@@ -102,33 +158,13 @@
                     </div>
                     <div class="inner content">
                         <div class="tit">
-                            <h2>
-                                Im Pallette
-                                <span class="case" aria-hidden="true">
-                                    <em>
-                                        <strong>1</strong>
-                                        <strong>2</strong>
-                                        <strong>3</strong>
-                                        <strong>4</strong>
-                                        <strong>5</strong>
-                                    </em>
-                                </span>
-                            </h2>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit.<br />
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Reiciendis cupiditate facere
-                                voluptatibus eius quisquam repellendus! Sed,
-                                neque ullam!
-                            </p>
+                            <h2>Like <span>Palette</span></h2>
                         </div>
-                        <div class="con"></div>
                     </div>
                 </section>
                 <section class="section portfolio">
-                    <h2 class="blind">portfolio</h2>
                     <div class="slide title">
+                        <h2 class="blind">portfolio</h2>
                         <div class="inner">
                             <div class="tit">
                                 <h3>animation ZZASAm</h3>
@@ -195,12 +231,13 @@
                                             </tr>
                                             <tr>
                                                 <th>COLOR</th>
-                                                <td>#f1f1f1</td>
+                                                <td>
+                                                    <span>1</span><span>2</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-
                                 <div class="link">
                                     <a
                                         href="https://mandoosd.github.io/portfolio_travel/"
@@ -273,7 +310,10 @@
                                             </tr>
                                             <tr>
                                                 <th>COLOR</th>
-                                                <td>#f1f1f1 #666666 #BF002C</td>
+                                                <td>
+                                                    <span>1</span>
+                                                    <span>3</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -282,7 +322,7 @@
                                     <a
                                         href="http://kmj0220.dothome.co.kr/"
                                         target="_blank"
-                                        >gnu board</a
+                                        >WEB SITE</a
                                     >
                                     <a
                                         href="https://www.nongshimmall.com/"
@@ -351,7 +391,9 @@
                                             </tr>
                                             <tr>
                                                 <th>COLOR</th>
-                                                <td>Black White</td>
+                                                <td>
+                                                    <span>1</span><span>2</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -359,9 +401,9 @@
 
                                 <div class="link">
                                     <a
-                                        href="http://kmj0000.dothome.co.kr/"
+                                        href="http://minjo0220.dothome.co.kr/"
                                         target="_blank"
-                                        >gnu board</a
+                                        >WEB SITE</a
                                     >
                                     <a
                                         href="https://lauche.co.kr/"
@@ -425,7 +467,9 @@
                                             </tr>
                                             <tr>
                                                 <th>COLOR</th>
-                                                <td>#FECE00 #333333</td>
+                                                <td>
+                                                    <span>1</span><span>2</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -435,7 +479,7 @@
                                     <a
                                         href="http://minjo3124.dothome.co.kr/"
                                         target="_blank"
-                                        >gnu board</a
+                                        >WEB SITE</a
                                     >
                                     <a
                                         href="https://www.ryupizza.com/"
@@ -498,7 +542,9 @@
                                             </tr>
                                             <tr>
                                                 <th>COLOR</th>
-                                                <td>#00C34D</td>
+                                                <td>
+                                                    <span>1</span><span>2</span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -526,49 +572,47 @@
                     </div>
                     <div class="traning_wrap inner">
                         <div class="traning_itm traning_itm01">
-                            <a href="">
+                            <a href="http://minjo0220.dothome.co.kr/">
                                 <figure>
                                     <img src="./images/clean.png" alt="" />
                                 </figure>
                             </a>
-                            <strong>asdasd</strong>
-                            <p>asdasdasd</p>
+                            <strong>금맥청소</strong>
+                            <p>그누보드</p>
                         </div>
                         <div class="traning_itm traning_itm02">
-                            <a href="">
+                            <a href="https://mandoosd.github.io/dokdo/">
                                 <figure>
                                     <img src="./images/dokdo.png" alt="" />
                                 </figure>
                             </a>
-                            <strong>asdasd</strong>
-                            <p>asdasdasd</p>
+                            <strong>독도전시관</strong>
                         </div>
                         <div class="traning_itm traning_itm03">
-                            <a href="">
+                            <a href="https://mandoosd.github.io/Hoban/">
                                 <figure>
                                     <img src="./images/hoban.png" alt="" />
                                 </figure>
                             </a>
-                            <strong>asdasd</strong>
-                            <p>asdasdasd</p>
+                            <strong>호반써밋</strong>
+                            <p>반응형</p>
                         </div>
                         <div class="traning_itm traning_itm04">
-                            <a href="">
+                            <a href="https://mandoosd.github.io/hyundai/">
                                 <figure>
                                     <img src="./images/hyundai.png" alt="" />
                                 </figure>
                             </a>
-                            <strong>asdasd</strong>
-                            <p>asdasdasd</p>
+                            <strong>현대엘리베이터</strong>
                         </div>
                         <div class="traning_itm traning_itm05">
-                            <a href="">
+                            <a href="https://mandoosd.github.io/kasia/">
                                 <figure>
                                     <img src="./images/kasia.png" alt="" />
                                 </figure>
                             </a>
-                            <strong>asdasd</strong>
-                            <p>asdasdasd</p>
+                            <strong>카시아속초</strong>
+                            <p>반응형</p>
                         </div>
                         <div class="traning_itm traning_itm06">
                             <a href="">
@@ -576,36 +620,68 @@
                                     <img src="./images/sungop.png" alt="" />
                                 </figure>
                             </a>
-                            <strong>asdasd</strong>
-                            <p>asdasdasd</p>
+                            <strong>순곱이네</strong>
+                            <p>그누보드</p>
                         </div>
                     </div>
                 </section>
                 <section class="section profile fp-scrollable">
                     <div class="inner">
                         <div class="tit">
-                            <h3>animation ZZASAM</h3>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit.<br />
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Reiciendis cupiditate facere
-                                voluptatibus eius quisquam repellendus! Sed,
-                                neque ullam!
-                            </p>
+                            <h2>Profile</h2>
+                        </div>
+                        <div class="profile_box">
+                            <div class="top">
+                                <div class="left">
+                                    <figure>
+                                        <img
+                                            src="./images/profile.png"
+                                            alt=""
+                                        />
+                                    </figure>
+                                    <ul>
+                                        <li>
+                                            Name
+                                            <p>곽민조</p>
+                                        </li>
+                                        <li>
+                                            birth
+                                            <p>2001년 12월 22일</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <div class="education">
+                                        <strong>education</strong>
+                                        <ul>
+                                            <li>
+                                                경남정보대학교 방송영상과 졸업
+                                                <p>2021.03 ~ 2023.03</p>
+                                            </li>
+                                            <li>
+                                                그린컴퓨터 아카데미 UX/UI
+                                                웹디자인 과정 수료
+                                                <p>2023.10 ~ 2024.03</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="skill">
+                                        <strong>skill</strong>
+                                        <div class="itm itm01">
+                                            <figure>
+                                                <img src="" alt="" />
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom"></div>
                         </div>
                     </div>
                     <div class="ctxt">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Perspiciatis, magnam!
                     </div>
-                </section>
-                <section class="section fp-auto-height">
-                    <h2>contact</h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Cupiditate, vitae?
-                    </p>
                 </section>
             </main>
             <footer class="footer">
@@ -618,10 +694,6 @@
                     </a>
                 </div>
             </footer>
-        </div>
-
-        <div class="cursor">
-            <img src="./images/p.png" alt="" />
         </div>
     </body>
 </html>

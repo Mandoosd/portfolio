@@ -6,7 +6,80 @@
     circleTxt(`.profile .ctxt`);
 })();
 
-//프레임전체 fullpage
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 6, density: { enable: true, value_area: 800 } },
+        color: { value: "#000000" },
+        shape: {
+            type: "edge",
+            stroke: { width: 0, color: "#000" },
+            polygon: { nb_sides: 6 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+        },
+        opacity: {
+            value: 0.1183721462448409,
+            random: true,
+            anim: { enable: false, speed: 0, opacity_min: 0.1, sync: false },
+        },
+        size: {
+            value: 160,
+            random: false,
+            anim: { enable: true, speed: 10, size_min: 40, sync: false },
+        },
+        move: {
+            enable: true,
+            speed: 8,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: false, mode: "push" },
+            resize: true,
+        },
+        modes: {
+            grab: { distance: 400, line_linked: { opacity: 0 } },
+            bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+        },
+    },
+    retina_detect: true,
+});
+var count_particles, stats, update;
+stats.setMode(0);
+stats.domElement.style.position = "absolute";
+stats.domElement.style.left = "0px";
+stats.domElement.style.top = "0px";
+document.body.appendChild(stats.domElement);
+count_particles = document.querySelector(".js-count-particles");
+update = function () {
+    stats.begin();
+    stats.end();
+    if (
+        window.pJSDom[0].pJS.particles &&
+        window.pJSDom[0].pJS.particles.array
+    ) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+};
+
+requestAnimationFrame(update); //프레임전체 fullpage
 function contentFullpage() {
     const slideWrap = document.querySelector(".portfolio");
 
@@ -39,7 +112,6 @@ function contentFullpage() {
     slideWrap.addEventListener("wheel", function (e) {
         let delta = e.deltaY; // 휠할 때에 deltaY값을 구해옴 100 , -100;
         //slide index 구해서 인덱스 마다 애니메이션 구해오기
-
         if (delta < 0) {
             fullpage_api.moveSlideLeft();
         } else {
@@ -82,41 +154,22 @@ function mainVisualTimeline() {
     const t = document.querySelector(".mainVisal .tit h2");
     const p = document.querySelector(".mainVisal .tit p");
     const a = document.querySelector(".mainVisal .t");
+    const b = document.querySelector(".mainVisal .bg");
 
     const tl = gsap.timeline();
     tl.from(t, {
         x: 1000,
         autoAlpha: 0,
+        delay: 2,
+        duration: 0.5,
+    });
+    tl.from(b, {
+        x: 1000,
+        rotate: 180,
+        autoAlpha: 0,
         delay: 0.5,
         duration: 0.5,
-    })
-        .from(p, {
-            x: 1000,
-            autoAlpha: 0,
-            delay: 0.5,
-            duration: 0.5,
-        })
-        .to("#div", {
-            motionPath: {
-                path: "#path",
-                align: "#path",
-                alignOrigin: [0.5, 0.5],
-                autoRotate: true,
-            },
-            duration: 10,
-            //repeat: -1,
-        })
-        .to("#div2", {
-            motionPath: {
-                path: "#path2",
-                align: "#path2",
-                alignOrigin: [0.5, 0.5],
-                autoRotate: true,
-            },
-            duration: 10,
-            //yoyo: true,
-            repeat: -1,
-        });
+    });
 }
 function portfolioTimeline(n) {
     const t = document.querySelectorAll(".portfolio .desc h3");
@@ -155,16 +208,7 @@ function portfolioTimeline(n) {
             b[n],
             { width: "100%", left: "0" }, // 오른쪽 끝을 기준으로 시작하도록 설정
             { width: "0%", left: "100%", duration: 0.5, ease: "power2.inOut" } // 너비를 변경하여 오른쪽으로 줄어들게 함
-        )
-        .to(`#itm0${n}`, {
-            motionPath: {
-                path: `#path0${n}`,
-                align: `#path0${n}`,
-                alignOrigin: [0.5, 0.5],
-                autoRotate: true,
-            },
-            duration: 10,
-        });
+        );
 }
 
 function storyTimeline() {
@@ -177,21 +221,11 @@ function storyTimeline() {
         autoAlpha: 0,
         x: 2000,
         delay: 0.5,
-    })
-        .from(p, {
-            autoAlpha: 0,
-            x: 2000,
-            delay: 0.5,
-        })
-        .to(`#itm0x`, {
-            motionPath: {
-                path: `#path0x`,
-                align: `#path0x`,
-                alignOrigin: [0.5, 0.5],
-                autoRotate: true,
-            },
-            duration: 10,
-        });
+    }).from(p, {
+        autoAlpha: 0,
+        x: 2000,
+        delay: 0.5,
+    });
 }
 
 function profileTimeline() {
@@ -223,13 +257,6 @@ function mouseCursor() {
             cursor.style.top = mouseY + "px";
         });
     });
-}
-
-function mouseCursorReset() {
-    const cursor = document.querySelector(".cursor");
-    cursor.style.left = 80 + "px";
-    cursor.style.top = "auto";
-    cursor.style.bottom = 40 + "px";
 }
 
 function circleTxt(txt) {

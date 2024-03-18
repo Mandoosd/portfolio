@@ -48,6 +48,71 @@ body {
     background: url(../images/patten01.png);
 }
 
+/* ---- reset ---- */
+body {
+    margin: 0;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url(../images/patten01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* ---- stats.js ---- */
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13e8e9;
+    font-size: 0.8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+    display: none;
+
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.blind {
+    display: none;
+}
+
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
+
 .inner {
     max-width: 120rem;
     margin: 0 auto;
@@ -73,6 +138,26 @@ body {
     z-index: 999;
 }
 
+.tel_wrap {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    bottom: 4rem;
+    left: 6rem;
+    z-index: 999;
+}
+
+.tel_wrap a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tel_wrap span {
+    font-size: 16px;
+}
+
 .gnb {
     position: fixed;
     top: 0;
@@ -87,37 +172,136 @@ body {
     transition: 0.5s;
 }
 
+.gnb h2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    top: 100px;
+    left: 100px;
+
+    font-size: 40px;
+    font-weight: 900;
+}
+
 .gnb.on {
     width: 100%;
     height: 100%;
+}
+
+.gnb_box {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+}
+
+.gnb_box > * {
+    flex: 1;
+}
+
+.gnb_box .left_txt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.gnb_box .left_txt strong {
+    display: block;
+    font-size: 80px;
+    line-height: 88px;
+    font-weight: 900;
+
+    color: #999;
+}
+
+.gnb_box .left_txt strong:nth-child(2) {
+    color: #000;
+}
+
+.gnb_box .left_txt strong:nth-child(3) {
+    display: inline-block;
+
+    color: rgb(255, 70, 70);
+}
+
+.gnb .lnk {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    text-align: right;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.gnb .txt_box {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.gnb .lnk li a {
+    display: flex;
+    gap: 20px;
+
+    align-items: center;
+}
+
+.gnb .lnk p {
+    font-size: 18px;
+    color: #666;
 }
 
 .mainVisal {
     position: relative;
 }
 
+.mainVisal #particles-js {
+    position: absolute;
+
+    z-index: 999;
+}
+
+.mainVisal .painting {
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.mainVisal .painting video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
 .mainVisal .bg {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 1000px;
+    left: 60%;
+    width: 700px;
 
     transform: translate(-50%, -50%);
 
-    fill: #fff;
-    stroke: rgba(0, 0, 0, 0.1);
+    fill: transparent;
+    stroke: rgba(0, 0, 0, 0.2);
 
     .cls-1 {
         stroke-linecap: square;
         stroke-linejoin: round;
         stroke-width: 2px;
     }
+
+    z-index: 999;
 }
 
 .mainVisal .path {
     position: absolute;
-    bottom: -5rem;
-    right: 10rem;
+    top: 50%;
+    right: 40%;
+
+    transform: translate(-50%, -50%);
     width: 160rem;
     height: 65rem;
 }
@@ -126,90 +310,31 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+
+    overflow: visible;
+    height: 100%;
+    max-width: 100%;
+
+    fill: #000;
+}
+
+.mainVisal .path circle {
+    fill: white;
 }
 
 .mainVisal .path path {
-    stroke: var(--primary-color);
-    stroke-dasharray: 5px 10px;
-    /* stroke-dashoffset: #333; */
+    stroke-width: 3px;
+    stroke: #88ce02;
+}
+
+.mainVisal h2 {
+    color: #000;
 }
 
 .mainVisal h2 span {
-    position: relative;
-    display: inline-block;
-    width: 10rem;
-    height: 10rem;
-    overflow: hidden;
-    font-size: 0;
-}
-
-.mainVisal h2 span em {
-    display: flex;
-    flex-direction: column;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 10rem;
-    height: 50rem;
-    animation: nemo 2s steps(5) infinite;
-}
-
-.mainVisal h2 span strong {
     display: block;
-    width: 10rem;
-    height: 10rem;
-    background: var(--primary-color);
-}
-
-.mainVisal h2 span strong:nth-child(1) {
-    clip-path: polygon(
-        20% 0%,
-        0% 20%,
-        30% 50%,
-        0% 80%,
-        20% 100%,
-        50% 70%,
-        80% 100%,
-        100% 80%,
-        70% 50%,
-        100% 20%,
-        80% 0%,
-        50% 30%
-    );
-}
-
-.mainVisal h2 span strong:nth-child(2) {
-    clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        100% 75%,
-        75% 75%,
-        75% 100%,
-        50% 75%,
-        0% 75%
-    );
-}
-
-.mainVisal h2 span strong:nth-child(3) {
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-}
-
-.mainVisal h2 span strong:nth-child(4) {
-    clip-path: circle(50% at 50% 50%);
-}
-
-.mainVisal h2 span strong:nth-child(5) {
-    clip-path: polygon(
-        40% 0%,
-        40% 20%,
-        100% 20%,
-        100% 80%,
-        40% 80%,
-        40% 100%,
-        0% 50%
-    );
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
 }
 
 @keyframes nemo {
@@ -238,6 +363,7 @@ body {
 
 .mainVisal .content {
     display: flex;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -366,15 +492,19 @@ body {
 .portfolio .con01 .tit .brush {
     background: url(../images/portfolioBG_01.png) no-repeat center center/cover;
 }
+
 .portfolio .con02 .tit .brush {
     background: url(../images/portfolioBG_02.png) no-repeat center center/cover;
 }
+
 .portfolio .con03 .tit .brush {
     background: url(../images/portfolioBG_03.png) no-repeat center center/cover;
 }
+
 .portfolio .con04 .tit .brush {
     background: url(../images/portfolioBG_04.png) no-repeat center center/cover;
 }
+
 .portfolio .con05 .tit .brush {
     background: url(../images/portfolioBG_05.png) no-repeat center center/cover;
 }
@@ -417,6 +547,60 @@ body {
     font-weight: 400;
     height: 4rem;
     border-bottom: 1px solid var(--lightgray-color);
+}
+
+.portfolio .con .desc_table td {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.portfolio .con .desc_table td span {
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+}
+
+/* color */
+
+.portfolio .con01 .desc_table td span:nth-child(1) {
+    background: #007dd5;
+}
+.portfolio .con01 .desc_table td span:nth-child(2) {
+    background: #f1f1f1;
+}
+
+.portfolio .con02 .desc_table td span:nth-child(1) {
+    background: #c7002e;
+}
+.portfolio .con02 .desc_table td span:nth-child(2) {
+    background: #f1f1f1;
+}
+.portfolio .con02 .desc_table td span:nth-child(3) {
+    background: #111111;
+}
+
+.portfolio .con03 .desc_table td span:nth-child(1) {
+    background: #666;
+}
+.portfolio .con03 .desc_table td span:nth-child(2) {
+    background: #000;
+}
+
+.portfolio .con04 .desc_table td span:nth-child(1) {
+    background: #fece00;
+}
+.portfolio .con04 .desc_table td span:nth-child(2) {
+    background: #000;
+}
+
+.portfolio .con05 .desc_table td span:nth-child(1) {
+    background: #06c756;
+}
+.portfolio .con05 .desc_table td span:nth-child(2) {
+    background: #ffffff;
 }
 
 .portfolio .tit h2 {
@@ -524,24 +708,38 @@ body {
 
 .traning .traning_wrap strong {
     font-size: 18px;
-    font-weight: 500;
-    margin: 0 0 8px;
+    line-height: 24px;
+    font-weight: 700;
 }
 
-.traning .traning_wrap .profile {
+.profile {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.traning .traning_wrap .profile .inner {
-}
-
-.profile .tit h3 {
+.profile .tit h2 {
     font-size: 10rem;
     font-weight: 900;
     margin: 0 0 3.2rem 0;
     text-transform: uppercase;
+}
+
+.profile .top {
+    display: flex;
+}
+
+.profile .top > * {
+    flex: 1;
+}
+
+.profile .top figure {
+    width: 200px;
+    clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
+    overflow: hidden;
+}
+
+.profile .right {
 }
 
 .totop {
