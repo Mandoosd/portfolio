@@ -135,6 +135,13 @@ canvas {
     position: fixed;
     top: 4rem;
     right: 6rem;
+    height: 100vh;
+    z-index: 999;
+}
+.utils_wrap .totop {
+    position: absolute;
+    bottom: 10rem;
+    right: 0;
     z-index: 999;
 }
 
@@ -161,37 +168,23 @@ canvas {
 .gnb {
     position: fixed;
     top: 0;
-    right: 0;
+    right: 6rem;
     z-index: 999;
 
-    width: 0;
-    height: 0;
-    background: var(--background-color);
+    width: 20rem;
+    height: 100%;
     overflow: hidden;
 
     transition: 0.5s;
 }
 
-.gnb h2 {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-
-    top: 100px;
-    left: 100px;
-
-    font-size: 40px;
-    font-weight: 900;
-}
-
 .gnb.on {
-    width: 100%;
-    height: 100%;
+    width: 0;
 }
 
 .gnb_box {
     display: flex;
-    width: 40%;
+    width: 50%;
     height: 100%;
     align-items: center;
 }
@@ -200,74 +193,59 @@ canvas {
     flex: 1;
 }
 
-.gnb_box .left_txt {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    text-align: left;
-}
-
-.gnb_box .left_txt strong {
-    display: block;
-    font-size: 80px;
-    line-height: 88px;
-    font-weight: 900;
-
-    color: #999;
-}
-
-.gnb_box .left_txt strong:nth-child(2) {
-    color: #000;
-}
-
-.gnb_box .left_txt strong:nth-child(3) {
-    display: inline-block;
-
-    color: rgb(255, 70, 70);
-}
-
-.gnb .lnk {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-
-    text-align: right;
-    font-size: 32px;
-    font-weight: 700;
-}
-
 .gnb .txt_box {
     display: flex;
 
     justify-content: space-between;
 }
 
-.gnb .lnk li a {
+.gnb .lnk {
     display: flex;
+    flex-direction: column;
+    width: 20rem;
     gap: 20px;
 
+    text-align: right;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.gnb .lnk li {
+    padding: 8px 0;
+
+    transition: 0.5s;
+    text-align: right;
+}
+
+.gnb .lnk li a {
     align-items: center;
 }
 
-.gnb .lnk p {
-    font-size: 18px;
-    color: #666;
+.gnb .lnk .active {
+    padding: 8px 16px;
+
+    background: #000;
+}
+.gnb .lnk .active a {
+    color: #fff;
 }
 
 .mainVisal {
     position: relative;
 }
 
-.mainVisal #particles-js {
-    position: absolute;
-
-    z-index: 999;
-}
-
 .mainVisal .painting {
     position: absolute;
     inset: 0 0 0 0;
+    z-index: 1;
+}
+
+.mainVisal .pattern {
+    position: absolute;
+    inset: 0 0 0 0;
+
+    background: url(../images/patten01.png);
+    z-index: 2;
 }
 
 .mainVisal .painting video {
@@ -282,10 +260,31 @@ canvas {
     left: 60%;
     width: 700px;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(360deg);
 
     fill: transparent;
     stroke: rgba(0, 0, 0, 0.2);
+
+    z-index: 3;
+    .cls-1 {
+        stroke-linecap: square;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+    }
+}
+.mainVisal .color_bg {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    width: 700px;
+
+    transform: translate(-50%, -50%) rotate(360deg);
+
+    fill: transparent;
+    stroke: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+
+    z-index: 3;
 
     .cls-1 {
         stroke-linecap: square;
@@ -293,7 +292,40 @@ canvas {
         stroke-width: 2px;
     }
 
-    z-index: 999;
+    .wood {
+        opacity: 0.7;
+    }
+
+    .color_01 {
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill: #007dd5;
+        opacity: 0.8;
+    }
+    .color_02 {
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill: #c7002e;
+        opacity: 0.8;
+    }
+    .color_03 {
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill: #000000;
+        opacity: 0.8;
+    }
+    .color_04 {
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill: #fece00;
+        opacity: 0.8;
+    }
+    .color_05 {
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill: #06c756;
+        opacity: 0.8;
+    }
 }
 
 .mainVisal .path {
@@ -362,10 +394,13 @@ canvas {
 }
 
 .mainVisal .content {
+    position: relative;
     display: flex;
     height: 100%;
     justify-content: space-between;
     align-items: center;
+
+    z-index: 3;
 }
 
 .mainVisal .con {
@@ -413,19 +448,6 @@ canvas {
 
 .portfolio .title {
     position: relative;
-}
-
-.profile .ctxt {
-    position: absolute;
-    bottom: 10rem;
-    right: 0;
-    width: 80%;
-    height: 80%;
-    font-size: 4rem;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-    animation: ctxt 25s linear infinite;
 }
 
 @keyframes bg {
@@ -479,7 +501,7 @@ canvas {
     width: 100%;
     height: 30%;
 
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .portfolio .con .tit .brush_inner {
@@ -733,18 +755,93 @@ canvas {
     flex: 1;
 }
 
-.profile .top figure {
-    width: 200px;
-    clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
+.profile .top .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile .top .left figure {
+    width: 300px;
     overflow: hidden;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 0 40px 0;
+}
+
+.profile .top .left ul {
+    position: relative;
+    width: 300px;
+}
+
+.profile .top .left ul::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 50%;
+    height: 1px;
+    transform: translate(50%, 0);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.profile .top .left ul li {
+    display: flex;
+    gap: 30px;
+    padding: 8px;
+}
+
+.profile .top .left ul li strong {
+    width: 60px;
+    font-weight: 700;
 }
 
 .profile .right {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
 }
 
-.totop {
-    position: fixed;
-    bottom: 10rem;
-    right: 6rem;
-    z-index: 999;
+.profile .right > * {
+    flex: 1;
+}
+
+.profile .right strong {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    margin: 0 0 20px 0;
+}
+
+.profile .right .education ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile .right .education ul li {
+    display: flex;
+    gap: 20px;
+}
+
+.profile .right .skill .grid_box {
+    display: grid;
+    gap: 40px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.profile .right .skill .grid_box .itm {
+    align-items: center;
+    text-align: center;
+}
+
+.profile .right .skill .grid_box figure {
+    display: block;
+    margin: 0 0 8px 0;
+}
+
+.profile .right .skill .grid_box span {
+    font-weight: 600;
 }
